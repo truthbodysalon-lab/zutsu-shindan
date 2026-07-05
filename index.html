@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>60秒 頭痛タイプ診断｜整体院トゥルース</title>
+<meta name="description" content="10の質問に答えるだけ。あなたの頭痛タイプと今日からできる対策がわかる無料診断。肩こり頭痛改善専門 整体院トゥルース(新潟県長岡市)">
+<meta property="og:title" content="60秒 頭痛タイプ診断">
+<meta property="og:description" content="10の質問であなたの頭痛タイプがわかる。LINEで詳しい結果と対策を無料でお届け。">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --cream:#FAF6EF;
+  --sage:#7BA88F;
+  --sage-dark:#5E8C73;
+  --ink:#3A3A3A;
+  --line-green:#06C755;
+  --card:#FFFFFF;
+  --accent:#E8A87C;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.7;
+  min-height:100vh;
+}
+.wrap{max-width:480px;margin:0 auto;padding:0 20px 60px}
+header{
+  text-align:center;
+  padding:28px 16px 8px;
+}
+.brand{
+  font-size:12px;
+  color:var(--sage-dark);
+  letter-spacing:.08em;
+  margin-bottom:4px;
+}
+h1{
+  font-size:24px;
+  font-weight:800;
+  line-height:1.4;
+}
+h1 .em{color:var(--sage-dark)}
+.sub{
+  font-size:13px;
+  color:#777;
+  margin-top:8px;
+}
+.card{
+  background:var(--card);
+  border-radius:18px;
+  padding:28px 22px;
+  margin-top:20px;
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+/* start screen */
+.start-points{list-style:none;margin:18px 0}
+.start-points li{
+  padding:10px 0 10px 34px;
+  position:relative;
+  font-size:15px;
+  border-bottom:1px dashed #eee;
+}
+.start-points li:last-child{border-bottom:none}
+.start-points li::before{
+  content:"";
+  position:absolute;left:4px;top:16px;
+  width:18px;height:18px;border-radius:50%;
+  background:var(--sage);
+}
+.start-points li::after{
+  content:"";
+  position:absolute;left:9px;top:20px;
+  width:8px;height:5px;
+  border-left:2px solid #fff;border-bottom:2px solid #fff;
+  transform:rotate(-45deg);
+}
+.btn{
+  display:block;width:100%;
+  border:none;cursor:pointer;
+  border-radius:14px;
+  padding:18px 16px;
+  font-size:17px;font-weight:700;
+  text-align:center;text-decoration:none;
+  transition:transform .08s ease, opacity .2s;
+  font-family:inherit;
+}
+.btn:active{transform:scale(.97)}
+.btn-primary{
+  background:var(--sage-dark);
+  color:#fff;
+  margin-top:18px;
+}
+.btn-line{
+  background:var(--line-green);
+  color:#fff;
+  margin-top:18px;
+  font-size:16px;
+  line-height:1.5;
+  padding:16px;
+}
+.note{
+  font-size:11px;color:#999;
+  margin-top:14px;text-align:center;
+}
+/* quiz */
+.progress{
+  height:8px;background:#E7E0D4;
+  border-radius:99px;overflow:hidden;
+  margin:22px 0 6px;
+}
+.progress-bar{
+  height:100%;width:0%;
+  background:linear-gradient(90deg,var(--sage),var(--sage-dark));
+  border-radius:99px;
+  transition:width .3s ease;
+}
+.progress-label{
+  font-size:12px;color:#999;text-align:right;
+}
+.q-number{
+  display:inline-block;
+  font-size:12px;font-weight:700;
+  color:var(--sage-dark);
+  background:#EDF3EE;
+  padding:4px 12px;border-radius:99px;
+  margin-bottom:12px;
+}
+.q-text{
+  font-size:19px;font-weight:700;
+  line-height:1.5;
+  margin-bottom:20px;
+}
+.choice{
+  display:block;width:100%;
+  background:#F7F4EC;
+  border:2px solid transparent;
+  border-radius:14px;
+  padding:16px;
+  margin-bottom:12px;
+  font-size:15px;font-weight:600;
+  text-align:left;cursor:pointer;
+  transition:all .15s;
+  font-family:inherit;
+  color:var(--ink);
+}
+.choice:active{
+  border-color:var(--sage-dark);
+  background:#EDF3EE;
+}
+/* result */
+.result-badge{
+  text-align:center;
+  font-size:13px;color:#fff;
+  background:var(--accent);
+  display:inline-block;
+  padding:5px 16px;border-radius:99px;
+  font-weight:700;
+  margin-bottom:10px;
+}
+.result-type{
+  font-size:26px;font-weight:800;
+  text-align:center;
+  color:var(--sage-dark);
+  line-height:1.4;
+  margin-bottom:6px;
+}
+.result-lead{
+  font-size:14px;text-align:center;color:#777;
+  margin-bottom:18px;
+}
+.result-desc{
+  font-size:15px;
+  background:#F7F4EC;
+  border-radius:14px;
+  padding:18px;
+  margin-bottom:16px;
+}
+.result-tips{
+  border-left:4px solid var(--sage);
+  padding:4px 0 4px 14px;
+  margin-bottom:8px;
+  font-size:14px;
+}
+.tips-title{
+  font-size:13px;font-weight:700;color:var(--sage-dark);
+  margin:16px 0 8px;
+}
+.line-box{
+  background:linear-gradient(135deg,#EDF9F0,#E3F4E9);
+  border-radius:16px;
+  padding:20px 18px;
+  margin-top:22px;
+  text-align:center;
+}
+.line-box .headline{
+  font-size:16px;font-weight:800;
+  line-height:1.5;
+}
+.line-box .gift{
+  font-size:13px;
+  margin-top:10px;text-align:left;
+  background:#fff;border-radius:12px;
+  padding:12px 14px;
+}
+.line-box .gift div{padding:3px 0}
+.restart{
+  display:block;text-align:center;
+  margin-top:20px;font-size:13px;
+  color:#999;text-decoration:underline;
+  background:none;border:none;cursor:pointer;
+  width:100%;
+  font-family:inherit;
+}
+.alert{
+  font-size:12px;
+  background:#FDF2F0;
+  border-radius:12px;
+  color:#B0604F;
+  padding:12px 14px;
+  margin-top:18px;
+  line-height:1.6;
+}
+footer{
+  text-align:center;
+  font-size:11px;color:#AAA;
+  margin-top:36px;
+  line-height:1.8;
+}
+.hidden{display:none}
+@media (min-width:481px){
+  body{background:#F0EBE0}
+  .wrap{background:var(--cream);min-height:100vh;box-shadow:0 0 40px rgba(0,0,0,.08)}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">肩こり頭痛改善専門 整体院トゥルース</div>
+  <h1>60秒でわかる<br><span class="em">頭痛タイプ診断</span></h1>
+  <p class="sub">10の質問に答えるだけ・無料</p>
+</header>
+
+<!-- START -->
+<div id="screen-start" class="card">
+  <p style="font-size:15px;font-weight:700;margin-bottom:4px">あなたの頭痛、どのタイプ？</p>
+  <p style="font-size:14px;color:#666">同じ「頭痛」でも、タイプによって対策はまったく違います。まずは自分のタイプを知ることが改善の第一歩です。</p>
+  <ul class="start-points">
+    <li>質問はぜんぶで10問・約60秒</li>
+    <li>その場でタイプがわかる</li>
+    <li>LINEで詳しい結果と対策を受け取れる</li>
+  </ul>
+  <button class="btn btn-primary" onclick="startQuiz()">診断をはじめる</button>
+  <p class="note">※本診断は医療行為ではなく、セルフケアの参考情報です</p>
+</div>
+
+<!-- QUIZ -->
+<div id="screen-quiz" class="hidden">
+  <div class="progress"><div class="progress-bar" id="bar"></div></div>
+  <div class="progress-label" id="plabel"></div>
+  <div class="card">
+    <span class="q-number" id="qnum"></span>
+    <p class="q-text" id="qtext"></p>
+    <div id="choices"></div>
+  </div>
+</div>
+
+<!-- RESULT -->
+<div id="screen-result" class="hidden">
+  <div class="card" style="text-align:center">
+    <span class="result-badge">診断結果</span>
+    <p class="result-type" id="rtype"></p>
+    <p class="result-lead" id="rlead"></p>
+    <div class="result-desc" style="text-align:left" id="rdesc"></div>
+    <div style="text-align:left">
+      <p class="tips-title">今日からできる3つの対策</p>
+      <div id="rtips"></div>
+    </div>
+
+    <div class="line-box">
+      <p class="headline">LINEで「詳しい結果」と<br>「あなた専用の改善プラン」を受け取る</p>
+      <div class="gift">
+        <div>・タイプ別の詳しい解説と改善ステップ</div>
+        <div>・1週間で頭痛がラクになる講座(全7日)</div>
+        <div>・天気、生理前の頭痛対策</div>
+        <div>・いつでも頭痛相談OK</div>
+      </div>
+      <a class="btn btn-line" id="linebtn" href="#" target="_blank" rel="noopener">
+        LINEで詳しい結果を受け取る<br>
+        <span style="font-size:12px;font-weight:400">友だち追加してそのまま送信するだけ</span>
+      </a>
+      <p class="note" style="margin-top:10px">すべて無料・いつでも解除OK・しつこい営業なし</p>
+    </div>
+
+    <div class="alert">
+      突然の激しい頭痛、手足のしびれ、ろれつが回らない等の症状がある場合は、この診断ではなくすぐに医療機関を受診してください。
+    </div>
+
+    <button class="restart" onclick="location.reload()">もう一度診断する</button>
+  </div>
+</div>
+
+<footer>
+  肩こり頭痛改善専門 整体院トゥルース<br>
+  新潟県長岡市柳原町2-4／Google口コミ ★4.8(144件)<br>
+  ※効果には個人差があります
+</footer>
+
+</div>
+
+<script>
+const LINE_OA_ID = "561yryuk";
+
+const QUESTIONS = [
+  {
+    q: "頭痛が出やすいのはどんなとき？",
+    c: [
+      {t:"夕方〜夜、仕事や家事の後", s:{A:2}},
+      {t:"天気が崩れる前や生理前", s:{B:2}},
+      {t:"薬が切れてきた頃に決まって", s:{C:2}},
+      {t:"特に決まっていない", s:{A:0.5,B:0.5}}
+    ]
+  },
+  {
+    q: "痛み方に一番近いのは？",
+    c: [
+      {t:"頭全体が締めつけられる・重い", s:{A:2}},
+      {t:"こめかみがズキンズキン脈打つ", s:{B:2}},
+      {t:"鈍い痛みがダラダラ続く", s:{C:1,A:0.5}}
+    ]
+  },
+  {
+    q: "よく痛む場所は？",
+    c: [
+      {t:"後頭部から首すじにかけて", s:{A:2}},
+      {t:"こめかみや目の奥", s:{B:2}},
+      {t:"頭全体・日によって違う", s:{C:1}}
+    ]
+  },
+  {
+    q: "肩こり・首こりはありますか？",
+    c: [
+      {t:"かなりひどい", s:{A:2}},
+      {t:"少しある", s:{A:1}},
+      {t:"あまり感じない", s:{}}
+    ]
+  },
+  {
+    q: "頭痛薬を飲む頻度は？",
+    c: [
+      {t:"月に10回以上", s:{C:3}},
+      {t:"月に2〜9回くらい", s:{C:1}},
+      {t:"ほとんど飲まない", s:{}}
+    ]
+  },
+  {
+    q: "体を動かすと頭痛は？",
+    c: [
+      {t:"あまり変わらない", s:{A:1}},
+      {t:"ひどくなる(じっとしていたい)", s:{B:2}},
+      {t:"すぐ薬を飲むのでわからない", s:{C:1}}
+    ]
+  },
+  {
+    q: "頭痛のとき、光・音・においが つらく感じる？",
+    c: [
+      {t:"はい、つらい", s:{B:2}},
+      {t:"いいえ、特に気にならない", s:{A:1}}
+    ]
+  },
+  {
+    q: "1日のデスクワーク・スマホ時間は？",
+    c: [
+      {t:"かなり長い(6時間以上)", s:{A:2}},
+      {t:"それなり(3〜6時間)", s:{A:1}},
+      {t:"短い(3時間未満)", s:{}}
+    ]
+  },
+  {
+    q: "入浴や温めで頭痛は？",
+    c: [
+      {t:"楽になる気がする", s:{A:2}},
+      {t:"変わらない・逆にひどくなる", s:{B:2}},
+      {t:"試したことがない", s:{}}
+    ]
+  },
+  {
+    q: "頭痛薬の効き方は？",
+    c: [
+      {t:"効くけど、また痛くなる", s:{C:2}},
+      {t:"最近効きが悪くなってきた", s:{C:3}},
+      {t:"よく効く・あまり飲まない", s:{}}
+    ]
+  }
+];
+
+const RESULTS = {
+  A: {
+    name: "緊張型タイプ",
+    lead: "首・肩のこわばりからくる頭痛の可能性",
+    desc: "後頭部から首すじの重さ、夕方の悪化、強い肩こり。長時間のデスクワークやスマホで首肩の筋肉が固まり、頭への血流が悪くなることで起こりやすいタイプです。日本人の頭痛でもっとも多いタイプといわれています。",
+    tips: [
+      "1時間に1回立ち上がり、肩を大きく回す",
+      "スマホは目線の高さで(うつむき姿勢を減らす)",
+      "湯船に浸かって首肩を温める"
+    ],
+    code: "A"
+  },
+  B: {
+    name: "片頭痛タイプ",
+    lead: "気圧や女性ホルモンの影響を受けやすい頭痛の可能性",
+    desc: "こめかみのズキンズキンする痛み、天気が崩れる前や生理前の悪化、光や音がつらい。血管の広がりが関係するタイプで、温めるより「冷やす・暗く静かな場所で休む」が合っている場合が多いです。",
+    tips: [
+      "痛む時はこめかみを冷やし、静かな場所で休む",
+      "天気が崩れる予報の前日は水分を多めに",
+      "寝すぎ・寝不足を避けて睡眠リズムを一定に"
+    ],
+    code: "B"
+  },
+  C: {
+    name: "薬に頼りがちタイプ",
+    lead: "薬の使いすぎが頭痛を招いている可能性",
+    desc: "頭痛薬を月10回以上飲む状態が続くと、薬が切れるたびに頭痛が起きやすくなる悪循環に入ることが知られています。今すぐ薬をやめる必要はありません。まず「記録」から始めるのが正しい第一歩です。",
+    tips: [
+      "頭痛と薬を飲んだ日をカレンダーに記録する",
+      "水を1日1.5〜2リットルこまめに飲む",
+      "「薬以外の対処」をひとつずつ増やしていく"
+    ],
+    code: "C"
+  },
+  D: {
+    name: "複合タイプ",
+    lead: "複数の原因が重なっている可能性",
+    desc: "緊張型と片頭痛の両方の特徴がある、あるいはまだパターンがはっきりしないタイプです。複数の原因が重なっている方は実はとても多く、まずご自身の頭痛の「クセ」を記録して知ることが改善への近道です。",
+    tips: [
+      "頭痛が出た日時・状況・強さをメモする",
+      "水分をこまめにとる(1日1.5リットル目安)",
+      "1時間に1回は姿勢をリセットする"
+    ],
+    code: "D"
+  }
+};
+
+let current = 0;
+let scores = {A:0, B:0, C:0};
+
+function startQuiz(){
+  document.getElementById("screen-start").classList.add("hidden");
+  document.getElementById("screen-quiz").classList.remove("hidden");
+  showQuestion();
+}
+
+function showQuestion(){
+  const q = QUESTIONS[current];
+  document.getElementById("qnum").textContent = "Q" + (current+1);
+  document.getElementById("qtext").textContent = q.q;
+  document.getElementById("bar").style.width = ((current) / QUESTIONS.length * 100) + "%";
+  document.getElementById("plabel").textContent = (current+1) + " / " + QUESTIONS.length;
+  const box = document.getElementById("choices");
+  box.innerHTML = "";
+  q.c.forEach(choice => {
+    const btn = document.createElement("button");
+    btn.className = "choice";
+    btn.textContent = choice.t;
+    btn.onclick = () => answer(choice.s);
+    box.appendChild(btn);
+  });
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function answer(s){
+  for (const k in s) scores[k] += s[k];
+  current++;
+  if (current < QUESTIONS.length) {
+    showQuestion();
+  } else {
+    showResult();
+  }
+}
+
+function judge(){
+  const entries = Object.entries(scores).sort((a,b) => b[1]-a[1]);
+  const [topKey, topVal] = entries[0];
+  const secondVal = entries[1][1];
+  // 薬依存は重大なので、C が 4点以上あれば優先
+  if (scores.C >= 4 && topKey !== "C" && scores.C >= topVal - 2) return "C";
+  // スコアが低い・拮抗 → 複合
+  if (topVal < 4 || topVal - secondVal < 1) return "D";
+  return topKey;
+}
+
+function showResult(){
+  const type = judge();
+  const r = RESULTS[type];
+  document.getElementById("screen-quiz").classList.add("hidden");
+  document.getElementById("screen-result").classList.remove("hidden");
+  document.getElementById("rtype").textContent = r.name;
+  document.getElementById("rlead").textContent = r.lead;
+  document.getElementById("rdesc").textContent = r.desc;
+  const tipbox = document.getElementById("rtips");
+  tipbox.innerHTML = "";
+  r.tips.forEach(t => {
+    const div = document.createElement("div");
+    div.className = "result-tips";
+    div.textContent = t;
+    tipbox.appendChild(div);
+  });
+  // LINE deep link: opens OA chat with prefilled message
+  const msg = encodeURIComponent("頭痛タイプ" + r.code + "の詳しい結果を受け取る");
+  document.getElementById("linebtn").href =
+    "https://line.me/R/oaMessage/%40" + LINE_OA_ID + "/?" + msg;
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+</script>
+</body>
+</html>
